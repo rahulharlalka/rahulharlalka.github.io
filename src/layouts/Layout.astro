@@ -1,0 +1,66 @@
+---
+import "../styles/global.css";
+
+const { title = "Rahul — Engineering Blog", description = "" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+
+  <body>
+    <header class="container header">
+      <a class="brand" href="/">Rahul</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about/">About</a>
+      </nav>
+    </header>
+
+    <slot />
+
+    <footer class="container footer">
+      <p>© {new Date().getFullYear()} Rahul • Built with Astro</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .brand {
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav {
+    display: flex;
+    gap: 14px;
+  }
+  .nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .nav a:hover {
+    color: var(--text);
+  }
+  .footer {
+    padding-top: 48px;
+    padding-bottom: 40px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
