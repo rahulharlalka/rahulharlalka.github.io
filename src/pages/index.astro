@@ -1,49 +1,142 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title="Rahul — Engineering Blog" description="Backend engineering, system design, Java, databases and distributed systems.">
+  <main class="container">
+    <section class="hero card">
+      <p class="kicker">👋 Hi, I’m Rahul</p>
+      <h1>Backend Engineer • System Design • Databases</h1>
+      <p class="sub">
+        This is my engineering space where I write about building scalable systems,
+        backend fundamentals, Java performance, RPC frameworks, and real-world architecture.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn primary" href="/blog/">Read the Blog</a>
+        <a class="btn" href="/about/">About Me</a>
+      </div>
+
+      <div class="metaRow">
+        <div class="pill">⚙️ LSM Trees</div>
+        <div class="pill">📦 Microservices</div>
+        <div class="pill">🧠 System Design</div>
+        <div class="pill">☕ Java Internals</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>What you’ll find here</h2>
+        <ul>
+          <li>Deep dives into databases & distributed systems</li>
+          <li>Practical system design with code</li>
+          <li>Performance engineering & debugging</li>
+          <li>Trade-offs: reliability, scalability, cost</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>My philosophy</h2>
+        <p>
+          I like writing content that’s <b>hands-on</b>, explains <b>why tradeoffs exist</b>,
+          and connects theory to real production constraints.
+        </p>
+        <p class="muted">
+          Expect diagrams, experiments, and clean design patterns.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Start here</h2>
+      <div class="links">
+        <a href="/blog/">📌 Latest posts</a>
+        <a href="/tags/system-design/">🧩 System design posts</a>
+        <a href="/tags/databases/">🗃️ Database posts</a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero h1 {
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.12;
+    margin: 8px 0 12px;
+  }
+  .kicker {
+    color: var(--muted);
+    margin: 0;
+    font-weight: 600;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 70ch;
+    margin: 0 0 18px;
+  }
+
+  .ctaRow {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .btn.primary {
+    background: rgba(96, 165, 250, 0.16);
+    border-color: rgba(96, 165, 250, 0.25);
+    color: var(--accent);
+  }
+
+  .metaRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .pill {
+    font-size: 13px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .grid {
+    margin-top: 18px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .links a {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .muted { color: var(--muted); }
+
+  @media (max-width: 760px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
