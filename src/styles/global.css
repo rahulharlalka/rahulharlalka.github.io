@@ -34,7 +34,7 @@ a:hover {
   max-width: 980px;
   margin: 0 auto;
   padding: 28px 18px;
-  min-height: 72vh;
+  min-height: 80vh;
 }
 
 .card {
@@ -90,4 +90,18 @@ hr {
   padding: 2px;
   font-size: 15px;
   color: #B6F500;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  max-width: 980px;
+  align-items: baseline;
+  margin: 0 auto
+}
+
+.right:first-of-type{
+  margin-left: auto; /* ✅ pushes all right items to the right */
+  padding: 12px;
+  gap: 6px
 }
