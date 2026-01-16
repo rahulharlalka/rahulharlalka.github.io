@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import placeholder from "../assets/rahul.jpg";
+import { Image } from "astro:assets";
 
 const { title = "Rahul — Engineering Blog", description = "" } = Astro.props;
 ---
@@ -15,9 +17,20 @@ const { title = "Rahul — Engineering Blog", description = "" } = Astro.props;
     {description && <meta name="description" content={description} />}
   </head>
 
-  <body>
+  <body class="container margin-top">
+    <div class="profile">
+      <Image class="avatar" src={placeholder} alt="Logo" />
+      <div class="profileText">
+        <h2 class="name">Rahul Harlalka</h2>
+        <div class="subRow">
+          <text><a href="/">About</a></text>
+          <text>|</text>
+          <text><a href="/blog">Blogs</a></text>
+        </div>
+      </div>
+    </div>
     <slot />
-   <Footer/>
+    <Footer />
   </body>
 </html>
 
