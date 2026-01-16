@@ -1,61 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import placeholder from "../assets/blog-placeholder-1.jpg";
 ---
 
-<Layout title="Rahul — Engineering Blog" description="Backend engineering, system design, Java, databases and distributed systems.">
+<Layout
+  title="Rahul — Engineering Blog"
+  description="Backend engineering, system design, Java, databases and distributed systems."
+>
   <main class="container">
-    <section class="hero card">
-      <p class="kicker">👋 Hi, I’m Rahul</p>
-      <h1>Backend Engineer • System Design • Databases</h1>
-      <p class="sub">
-        This is my engineering space where I write about building scalable systems,
-        backend fundamentals, Java performance, RPC frameworks, and real-world architecture.
-      </p>
-
-      <div class="ctaRow">
-        <a class="btn primary" href="/blog/">Read the Blog</a>
-        <a class="btn" href="/about/">About Me</a>
+    <div class="profile">
+      <Image class="avatar" src={placeholder} alt="Logo" />
+      <div class="profileText">
+        <h2 class="name">Rahul Harlalka</h2>
+        <div class="subRow">
+          <text>About</text>
+          <text>|</text>
+          <text>Blog</text>
+        </div>
       </div>
-
-      <div class="metaRow">
-        <div class="pill">⚙️ LSM Trees</div>
-        <div class="pill">📦 Microservices</div>
-        <div class="pill">🧠 System Design</div>
-        <div class="pill">☕ Java Internals</div>
-      </div>
-    </section>
-
-    <section class="grid">
-      <div class="card">
-        <h2>What you’ll find here</h2>
-        <ul>
-          <li>Deep dives into databases & distributed systems</li>
-          <li>Practical system design with code</li>
-          <li>Performance engineering & debugging</li>
-          <li>Trade-offs: reliability, scalability, cost</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>My philosophy</h2>
-        <p>
-          I like writing content that’s <b>hands-on</b>, explains <b>why tradeoffs exist</b>,
-          and connects theory to real production constraints.
-        </p>
-        <p class="muted">
-          Expect diagrams, experiments, and clean design patterns.
-        </p>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Start here</h2>
-      <div class="links">
-        <a href="/blog/">📌 Latest posts</a>
-        <a href="/tags/system-design/">🧩 System design posts</a>
-        <a href="/tags/databases/">🗃️ Database posts</a>
-      </div>
-    </section>
+    </div>
   </main>
 </Layout>
 
@@ -112,7 +76,7 @@ import Layout from "../layouts/Layout.astro";
     border: 1px solid var(--border);
     padding: 6px 10px;
     border-radius: 999px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
   }
 
   .grid {
@@ -131,12 +95,16 @@ import Layout from "../layouts/Layout.astro";
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 10px 12px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
   }
 
-  .muted { color: var(--muted); }
+  .muted {
+    color: var(--muted);
+  }
 
   @media (max-width: 760px) {
-    .grid { grid-template-columns: 1fr; }
+    .grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

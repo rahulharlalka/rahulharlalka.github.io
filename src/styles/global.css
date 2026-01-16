@@ -1,10 +1,10 @@
 :root {
   color-scheme: dark;
 
-  --bg: #0b0c10;
-  --bg2: #12131a;
-  --card: #151823;
-  --text: #e8e8ea;
+  --bg: #222831;
+  --bg2: #393E46;
+  --card: #948979;
+  --text: #DFD0B8;
   --muted: #a8b0bb;
   --accent: #60a5fa;
   --border: rgba(255, 255, 255, 0.08);
@@ -32,6 +32,7 @@ a:hover {
   max-width: 980px;
   margin: 0 auto;
   padding: 28px 18px;
+  min-height: 72vh;
 }
 
 .card {
@@ -45,4 +46,46 @@ hr {
   border: none;
   border-top: 1px solid var(--border);
   margin: 28px 0;
+}
+
+
+.profile {
+  display: flex;
+  gap: 14px;
+  align-items: stretch; /* makes right side same height as image */
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  
+}
+
+.profileText {
+  height: 100px;       
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; 
+}
+
+.name {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.subRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: baseline; /* baseline alignment for text */
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.subRow text {
+  padding: 2px;
+  font-size: 15px;
+  color: #EDFFF0;
 }
