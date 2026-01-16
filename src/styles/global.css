@@ -86,10 +86,11 @@ hr {
   font-size: 13px;
 }
 
-.subRow text {
+.subRow a {
   padding: 2px;
   font-size: 15px;
   color: #B6F500;
+  text-decoration: none;
 }
 
 .row{
@@ -104,4 +105,8 @@ hr {
   margin-left: auto; /* ✅ pushes all right items to the right */
   padding: 12px;
   gap: 6px
+}
+
+.margin-top{
+  margin-top: 20px;
 }
