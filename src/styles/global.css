@@ -110,3 +110,33 @@ hr {
 .margin-top{
   margin-top: 20px;
 }
+
+.title{
+  gap: 24px;
+  color: var(--text);
+  text-decoration: underline;
+
+}
+
+.date{
+  color: var(--text);
+}
+
+.column{
+  display: flex;
+  flex-direction : column;
+  padding: 24px;
+}
+
+.description {
+  font-size: 14px;
+  color : var(--text)
+}
+
+.font-size-12{
+  font-size: 12px
+}
+
+.margin-bottom-0{
+  margin-bottom: 0;
+}
